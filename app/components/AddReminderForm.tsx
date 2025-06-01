@@ -34,7 +34,7 @@ export default function AddReminderForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3 p-4 rounded-xl shadow">
+    <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
       <input className="input" placeholder="Pet name" value={form.pet} onChange={e => setForm({ ...form, pet: e.target.value })} />
       <select className="input" value={form.category} onChange={e => setForm({ ...form, category: e.target.value as ReminderForm["category"] })}>
         <option value="General">General</option>
@@ -46,7 +46,7 @@ export default function AddReminderForm() {
       <input type="date" className="input" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} />
       <input type="time" className="input" value={form.time} onChange={e => setForm({ ...form, time: e.target.value })} />
       <input className="input" placeholder="Frequency" value={form.frequency} onChange={e => setForm({ ...form, frequency: e.target.value })} />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Add Reminder</button>
+      <button type="submit" className="text-black bg-limegreen">Add Reminder</button>
     </form>
   )
 }
