@@ -1,12 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-*: initial;
-  --color-white: #fff;
-  --color-purple: #3f3cbb;
-  --color-midnight: #121063;
-  --color-tahiti: #3ab7bf;
-  --color-bermuda: #78DCCA;
   --color-lavender: #F7AEF8;
   --color-softblue: #8093F1;
   --color-limegreen: #B2FF9E;
@@ -15,7 +9,7 @@
 
 button{
   width: auto;
-  border-radius: 32px;
+  border-radius: 12px;
   padding: 8px;
   box-shadow: 1px 1px 1px black;
 }

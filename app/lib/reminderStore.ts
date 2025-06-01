@@ -1,14 +1,16 @@
 import { create } from 'zustand'
 
+export type Category = 'General' | 'Lifestyle' | 'Health';
+export type DateFilter = 'today' | 'all';
+
 export type Reminder = {
   id: string;
   pet: string;
-  category: 'General' | 'Lifestyle' | 'Health';
+  category: Category;
   title: string;
   notes?: string;
-  date: string; // ISO string
-  time: string; // HH:mm
-  frequency: string;
+  date: string;
+  time: string;
   done: boolean;
 };
 
@@ -16,6 +18,12 @@ type State = {
   reminders: Reminder[];
   setReminders: (r: Reminder[]) => void;
   toggleDone: (id: string) => void;
+  filters: {
+    pet: string;
+    category: Category | '';
+    date: DateFilter;
+  };
+  setFilter: (filter: Partial<State['filters']>) => void;
 };
 
 export const useRemindersStore = create<State>((set) => ({
@@ -27,4 +35,7 @@ export const useRemindersStore = create<State>((set) => ({
         rem.id === id ? { ...rem, done: !rem.done } : rem
       ),
     })),
+     filters: { pet: '', category: '', date: 'all' },
+  setFilter: (filter) =>
+    set((state) => ({ filters: { ...state.filters, ...filter } })),
 }));

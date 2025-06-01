@@ -30,15 +30,7 @@ export default function EditReminderPage() {
       {/* Repeat inputs for all fields like in Add Form */}
       <button onClick={handleSave} className="bg-green-500 px-4 py-2 text-white rounded">Save</button>
       <button onClick={() => router.back()} className="ml-2">Cancel</button>
-      <button
-            onClick={() => {
-              setReminders(reminders.filter(r => r.id !== r.id))
-              router.push('/')
-            }}
-            className="bg-red-500 text-white px-4 py-2 rounded"
-          >
-            Delete
-          </button>
+      
     </div>
   )
 }
